@@ -7,8 +7,11 @@ import CarFront from "../assets/images/car_front.png";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const CarSelection = () => {
+  const navigate = useNavigate();
+
   const USERS = [
     { id: 1, platename: "3931 W 2RIW", status: 'active' },
     { id: 2, platename: "32 W 2RIW", status: '5 days more' },
@@ -89,7 +92,9 @@ const CarSelection = () => {
                           <Col lg={4} xl={4} md={6} className={user.status === 'active' ? "car-cards-col-green" : (user.status !== 'none' ? 'car-cards-col-red' : 'car-cards-col')}>
                             <Row>
                               <Col className="card-col">
-                                <Card>
+                                <Link to='/inspection'>
+                                
+                                <Card >
                                   <Card.Body>
                                     <span className="days-more-span">{user.status}</span>
                                     <span className="appointment-span">
@@ -99,6 +104,7 @@ const CarSelection = () => {
                                     <span>{user.platename}</span>
                                   </Card.Body>
                                 </Card>
+                                </Link>
                               </Col>
                             </Row>
                           </Col>

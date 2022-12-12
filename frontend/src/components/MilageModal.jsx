@@ -21,16 +21,16 @@ function MilageModal({ name, ...props }) {
         <Offcanvas.Body>
           <div>
             <label htmlFor="Milage">Milage</label>
-            <input type="text" id='Milage'/>
+            <input type="text" id='Milage' className='form-control'/>
 
             <label className='mt-4' htmlFor="Milagesystem">Milage In system</label>
-            <input type="text" id='Milagesystem'/>
+            <input type="text" id='Milagesystem' className='form-control'/>
 
             <label className='mt-4' htmlFor="Update">Last Update On</label>
-            <input type="date" id='Update'/>
+            <input type="date" id='Update' className='form-control'/>
 
             <label className='mt-4' htmlFor="Difference">Difference</label>
-            <input type="text" id='Difference'/>
+            <input type="text" id='Difference' className='form-control'/>
 
             <div className="buttons text-end mt-4">
               <button className='btn mx-2'>Cancel</button>

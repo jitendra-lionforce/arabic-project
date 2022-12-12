@@ -21,16 +21,16 @@ function CustomerDetailsModal({ name, ...props }) {
         <Offcanvas.Body>
           <div>
             <label htmlFor="Name">Name</label>
-            <input type="text" id='Name'/>
+            <input type="text" id='Name' className='form-control'/>
 
             <label className='mt-4' htmlFor="Phone">Phone</label>
-            <input type="Number" id='Phone'/>
+            <input type="Number" id='Phone' className='form-control'/>
 
             <label className='mt-4' htmlFor="Email">Email</label>
-            <input type="Email" id='Email'/>
+            <input type="Email" id='Email' className='form-control'/>
 
             <label className='mt-4' htmlFor="VIN">VIN</label>
-            <input type="text" id='VIN'/>
+            <input type="text" id='VIN' className='form-control'/>
 
             <div className="buttons text-end mt-4">
               <button className='btn mx-2'>Cancel</button>

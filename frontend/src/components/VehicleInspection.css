@@ -17,11 +17,9 @@ small {
 } */
 .offcanvas.offcanvas-start {
     top: auto !important;
-    /* left: 0; */
     border-radius: 48px 0px 0px 0px;
-    height: 80vh;
     right: 0 !important;
-    /* bottom: 0 !important; */
+    bottom: 0 !important;
     width: var(--bs-offcanvas-width);
     border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
     transform: translateX(100%);
@@ -34,7 +32,9 @@ small {
 .offcanvas.offcanvas-start {
     left: auto;
     bottom: 0 !important;
-    height: auto !important;
+    top: inherit !important;
+    bottom: 0 !important;
+    height: 600px !important;
 }
 
 .confirmation {
@@ -42,6 +42,7 @@ small {
 }
 .car-img{
     object-fit: contain;
+    width: 100%;
 }
 .service-mil-modal-title {
     font-weight: 700;
@@ -72,7 +73,7 @@ small {
     width: 60%;
 }
 
-.mil-service-option-yes {
+.active-mil-service-option-yes {
     background-color: #000000;
     font-size: 15px;
     padding: 9px 7px;
@@ -86,7 +87,7 @@ small {
     background-color: #000000;
     font-size: 15px;
     padding: 9px 7px;
-    color: #000000;
+    /* color: #000000; */
     border: 1px solid#D8D8D8;
     background-color: transparent;
     box-sizing: border-box;
@@ -140,15 +141,16 @@ small {
     margin: auto;
     position: absolute;
     top: 79%;
-    right: 53px;
+    right: 80px;
 }
 .view-buttons button:nth-child(6){
     margin: auto;
     position: absolute;
     top: 79%;
-    left: 53px;
+    left: 80px;
 }
 
-input{
-    min-width: 100% !important;
+.btn:active:focus-visible{
+    box-shadow: transparent !important;
+    border-color: transparent !important;
 }

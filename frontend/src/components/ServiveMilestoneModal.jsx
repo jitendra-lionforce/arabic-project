@@ -6,18 +6,32 @@ import './VehicleInspection.css'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function ServiveMilestoneModal({ name, ...props }) {
+function ServiveMilestoneModal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  const [oilchange, setOilchange] = useState(0)
+  const [engineCheck, setEngineCheck] = useState(0)
+  const [breakShoe, setBreakShoek] = useState(0)
+  const [rotateTyres, setRotateTyres] = useState(0)
+  const [Carburetor, setCarburetor] = useState(0)
+  const [battery, setBattery] = useState(0)
+  const [carbody, setCarbody] = useState(0)
+  const [airFilter, setAirFilter] = useState(0)
+  const [waxVehicle, setWaxVehicle] = useState(0)
+  const [transmissonFluid, setTransmissonFluid] = useState(0)
+  const [sparksPlug, setSparksPlug] = useState(0)
+
+  const boxs = ['Yes', 'No'];
   return (
     <>
       <Button onClick={handleShow} className="inspection-view-btn me-2 py-0 px-4 mt-3">
         View
       </Button>
-      <Offcanvas className="py-2" show={show} onHide={handleClose} {...props}>
+      <Offcanvas className="py-2" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
             <span className='service-mil-modal-km'>100,000 KM Service</span> <br />
@@ -31,142 +45,209 @@ function ServiveMilestoneModal({ name, ...props }) {
                 <div className='mil-service-option'>
                   Oil Change
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setOilchange(index)}
+                        className={oilchange === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Engine Check
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setEngineCheck(index)}
+                        className={engineCheck === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Break Shoe Check
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setBreakShoek(index)}
+                        className={breakShoe === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Rotate Tyres
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setRotateTyres(index)}
+                        className={rotateTyres === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Carburetor
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setCarburetor(index)}
+                        className={Carburetor === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Battery
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setBattery(index)}
+                        className={battery === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
+              </Col>
+            </Row>
+
+            <Row>
+              <Col className='mil-service-col'>
+                <div className='mil-service-option'>
+                  Car Body
                 </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setCarbody(index)}
+                        className={carbody === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Air Filter
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setAirFilter(index)}
+                        className={airFilter === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Wax Vehicle
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setWaxVehicle(index)}
+                        className={waxVehicle === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Transmisson  Fluid
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setTransmissonFluid(index)}
+                        className={transmissonFluid === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>
               <Col className='mil-service-col'>
                 <div className='mil-service-option'>
-                  Oil Change
+                  Sparks  Plug
                 </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col className='mil-service-col'>
-                <div className='mil-service-option'>
-                  Oil Change
-                </div>
-                <div className='mil-service-option-yes'>
-                  Yes
-                </div>
-                <div className='mil-service-option-no'>
-                  No
-                </div>
+                {
+                  boxs.map((el, index) => {
+                    return (
+                      <button key={index} onClick={() => setSparksPlug(index)}
+                        className={sparksPlug === index ?
+                          "active-mil-service-option-yes " :
+                          "mil-service-option-no"}>
+                        {el}
+                      </button>
+                    )
+                  })
+                }
               </Col>
             </Row>
             <Row>

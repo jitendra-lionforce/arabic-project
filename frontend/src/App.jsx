@@ -11,6 +11,7 @@ import Banner from './components/Banner';
 import OperatorLogin from './components/OperatorLogin'
 import MobileLogin from './components/MobileLogin'
 import VehicleInspection from './components/VehicleInspection';
+// import Rangeslider from './components/Rangeslider';
 
 // const PrivateRoutes = ({ auth }) => {
 //   // let auth = { 'token': false }
@@ -26,6 +27,7 @@ function App() {
     <>
       <Router>
         {/* <Header /> */}
+        {/* <Rangeslider/> */}
         <Routes>
           <Route path='/' element={<Protected Component={CarSelection} />} />
           <Route path='/products' element={<Protected Component={Products} />} />

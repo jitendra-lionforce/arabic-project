@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header-dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
+#fuso,
+#front,
+#outlander {
+  transition: .3s ease all;
+  /* position: absolute; */
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.small-heading {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.view-btn {
+  display: block;
+  border-radius: 50%;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.view-btn.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal.fade .modal-dialog {
+  /* transform: translate3d(0, 100vh, 0); */
+}
+
+.service-dropdown .dropdown-toggle {
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  border-color: #8F8F8F;
+}
+
+.service-dropdown .dropdown-item {
+  font-size: 14px;
+
+}
+
+@media (min-width: 992px) {
+  /* #outlander {
+    left: 150px;
+  }
+
+  #fuso {
+    right: 150px;
+  }
+
+  .centerPos {
+    left: 36%;
+    transform: translateX(-50%);
+    top: 25%;
+  }
+
+  .semi-circle {
+    min-height: 500px;
+  } */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-container {
+    padding: 0;
+  }
+}

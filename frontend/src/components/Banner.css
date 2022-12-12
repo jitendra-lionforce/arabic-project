@@ -1,0 +1,22 @@
+#outlander,
+#fuso,
+#front {
+    position: absolute;
+    /* left: 250px; */
+}
+
+/* @media(min-width: 992px) { */
+
+
+
+    .semi-circle {
+        position: relative;
+        background-position: bottom;
+        background-size: cover;
+        min-height: 500px;
+    }
+
+    .small-semi-circle {
+        min-height: 200px;
+    }
+/* } */

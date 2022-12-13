@@ -3,11 +3,16 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import carFront from '../assets/images/car_front.png'
 import carFrontSmall from '../assets/images/car_front_small.png'
-import fuso from '../assets/images/fuso.png'
-import outlander from '../assets/images/outlander.png'
+import fusoSmall from '../assets/images/fuso.png'
+import fuso from '../assets/images/fuso_big.png'
+import outlanderSmall from '../assets/images/outlander.png'
+import outlander from '../assets/images/outlander_big.png'
 import './Banner.css'
 const Banner = () => {
     const ref = useRef(null)
+    const [frontSrc, setFrontSrc] = useState(carFront) 
+    const [fusoSrc, setFusoSrc] = useState(fusoSmall)
+    const [outSrc, setOutSrc] = useState(outlanderSmall)
     const [bool, setBool] = useState(false)
     const [text, setText] = useState('')
     React.useEffect(() => {
@@ -41,7 +46,7 @@ const Banner = () => {
 
         if (outTranslateX === 0) {
             document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,0%)`
-            document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px)`
+            document.getElementById("front").style.transform = `translate(${middleSemi}px,${smallSemiH}px)`
             return
         }
 
@@ -83,6 +88,10 @@ const Banner = () => {
         if (outPosX === 0) {
             return
         }
+
+        setFrontSrc(carFront)
+        setOutSrc(outlanderSmall)
+        setFusoSrc(fusoSmall)
         let smallSemiW = document.getElementById('small-semi').offsetWidth
         let smallSemiH = document.getElementById('small-semi').offsetHeight
         let middleSemi = document.getElementById('small-semi').offsetWidth / 2
@@ -92,7 +101,8 @@ const Banner = () => {
         // let frontNewPosX = middleSemi + 100
 
         document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,0%)`
-        document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px) scale(1.5)`
+        // document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px) scale(1.5)`
+        document.getElementById("front").style.transform = `translate(${middleSemi}px,${smallSemiH}px)`
         document.getElementById("outlander").style.transform = `translate(0,0)`
         // if (translateVal.x > 0) {
         // document.getElementById("front").style.transform = "translate(0%,0%)"
@@ -107,6 +117,9 @@ const Banner = () => {
     }
 
     function fusoClick() {
+        setFusoSrc(fuso)
+        setFrontSrc(carFrontSmall)
+        setOutSrc(outlanderSmall)
 
         document.getElementById("front").style.transform = `translate(0px,0%)`
 
@@ -118,7 +131,8 @@ const Banner = () => {
         let outNewPosX = smallSemiW + 200
 
         // document.getElementById("front").style.transform = `translate(${smallSemiW}px,0%)`
-        document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,${smallSemiH}px) scale(1.5)`
+        // document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,${smallSemiH}px) scale(1.5)`
+        document.getElementById("fuso").style.transform = `translate(${halfSemiW}px,${smallSemiH}px)`
         document.getElementById("outlander").style.transform = `translate(${outNewPosX}px,0)`
 
         // let fusoTranslateVal = (getTranslateValues(document.getElementById("fuso")));
@@ -186,6 +200,10 @@ const Banner = () => {
     }
 
     function outClick() {
+        setOutSrc(outlander)
+        setFrontSrc(carFrontSmall)
+        setFusoSrc(fusoSmall)
+
         let outOffset = getOffset(document.getElementById("outlander"))
         let frontOffset = getOffset(document.getElementById("front"))
         let fusoOffset = getOffset(document.getElementById("fuso"))
@@ -201,7 +219,8 @@ const Banner = () => {
         // document.getElementById("front").style.transform = `translate(${smallSemiW}px,0%)`
         // if(outTranslateX === 0) {
             
-            document.getElementById("outlander").style.transform = `translate(${outPosX}px,${smallSemiH}px) scale(1.5)`
+            // document.getElementById("outlander").style.transform = `translate(${outPosX}px,${smallSemiH}px) scale(1.5)`
+            document.getElementById("outlander").style.transform = `translate(${halfSemiW}px,${smallSemiH}px)`
         // }
         document.getElementById("front").style.transform = `translate(${frontNewPosX}px,0)`
         // let frontNewPos = frontOffset.left - outOffset.left
@@ -257,10 +276,10 @@ const Banner = () => {
             <div className="semi-circle">
                 <div className="d-flex justify-content-center">
 
-                    <img id='outlander' onClick={outClick} src={outlander} />
+                    <img id='outlander' onClick={outClick} src={outSrc} />
 
-                    <img id='fuso' onClick={fusoClick} src={fuso} />
-                    <img id='front' onClick={frontClick} src={carFrontSmall} />
+                    <img id='fuso' onClick={fusoClick} src={fusoSrc} />
+                    <img id='front' onClick={frontClick} src={frontSrc} />
 
                     <div id='small-semi' className="small-semi-circle">
 

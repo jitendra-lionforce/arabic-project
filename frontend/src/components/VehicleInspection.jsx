@@ -20,7 +20,7 @@ import CustomerConfirmationModal from './CustomerConfirmationModal';
 import CustomerDetailsModal from './CustomerDetailsModal';
 import MilageModal from './MilageModal';
 import InspectionDetailsModel from './InspectionDetailsModel';
-import ReactSlider from "react-slider";
+// import ReactSlider from "react-slider";
 import CarIssuePopup from './CarIssuePopup'
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';

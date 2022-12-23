@@ -11,7 +11,7 @@ import Banner from './components/Banner';
 import OperatorLogin from './components/OperatorLogin'
 import MobileLogin from './components/MobileLogin'
 import VehicleInspection from './components/VehicleInspection';
-// import Rangeslider from './components/Rangeslider';
+// import Addmoreinput from './components/Addmoreinput.jsx';
 
 // const PrivateRoutes = ({ auth }) => {
 //   // let auth = { 'token': false }
@@ -27,12 +27,12 @@ function App() {
     <>
       <Router>
         {/* <Header /> */}
-        {/* <Rangeslider/> */}
+        {/* <Addmoreinput/> */}
         <Routes>
           <Route path='/' element={<Protected Component={CarSelection} />} />
           <Route path='/products' element={<Protected Component={Products} />} />
           <Route path='/inspection' element={<Protected Component={VehicleInspection} />} />
-          <Route path='/login' element={<Login  />} />
+          <Route path='/login' element={<Login/>} />
           <Route path='/oplogin' element={<OperatorLogin  />} />
           <Route path='/mobilelogin' element={<MobileLogin  />} />
         </Routes>

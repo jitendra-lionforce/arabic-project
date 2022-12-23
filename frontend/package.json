@@ -9,19 +9,18 @@
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",
-    "framework7-react": "^7.0.9",
-    "nouislider-react": "^3.4.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-icons": "^1.10.2",
     "react-bootstrap-range-slider": "^3.0.8",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-md": "^5.1.4",
     "react-rangeslider": "^2.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "reactstrap": "^9.1.5",
-    "rsuite": "^5.23.2",
+    "react-slider": "^2.0.4",
+    "rsuite": "^5.23.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -47,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.56.2"
   }
 }

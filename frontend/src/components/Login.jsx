@@ -30,6 +30,7 @@ const Login = () => {
     // setAuth(true)
     localStorage.setItem('login', true)
     let login = localStorage.getItem('login')
+    localStorage.setItem('Username', username)
     console.log(login);
     if (login) {
       navigate('/oplogin')
@@ -65,16 +66,14 @@ const Login = () => {
         </div> */}
         <form className='mt-5'>
 
-          <div>
-
-            <input className='p-4' type='text' placeholder='Autoline Username' value={username} onChange={handleKeyPress} dir={dirState}/>
+          <div className='LoginPage'>
+            <input className='p-3 form-control w-50' type='text' placeholder='Autoline Username' value={username} onChange={handleKeyPress} dir={dirState}/>
           </div>
-          <div className='mt-3'>
-
-            <input className='p-4' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <div className='mt-3 LoginPage'>
+            <input className='p-3 form-control w-50' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <div className='mt-3'>
-            <button className='primary-btn' onClick={submitForm}>Submit</button>
+          <div className='mt-3 LoginPage'>
+            <button className='w-50 primary-btn form-control' onClick={submitForm}>Submit</button>
           </div>
         </form>
       </div>

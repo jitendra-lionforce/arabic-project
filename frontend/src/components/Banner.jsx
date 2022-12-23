@@ -46,7 +46,7 @@ const Banner = () => {
 
         if (outTranslateX === 0) {
             document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,0%)`
-            document.getElementById("front").style.transform = `translate(${middleSemi}px,${smallSemiH}px)`
+            document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px)`
             return
         }
 
@@ -102,7 +102,7 @@ const Banner = () => {
 
         document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,0%)`
         // document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px) scale(1.5)`
-        document.getElementById("front").style.transform = `translate(${middleSemi}px,${smallSemiH}px)`
+        document.getElementById("front").style.transform = `translate(${frontNewPosX}px,${smallSemiH}px)`
         document.getElementById("outlander").style.transform = `translate(0,0)`
         // if (translateVal.x > 0) {
         // document.getElementById("front").style.transform = "translate(0%,0%)"
@@ -119,8 +119,6 @@ const Banner = () => {
     function fusoClick() {
         setFusoSrc(fuso)
         setFrontSrc(carFrontSmall)
-        setOutSrc(outlanderSmall)
-
         document.getElementById("front").style.transform = `translate(0px,0%)`
 
         let smallSemiW = document.getElementById('small-semi').offsetWidth
@@ -132,7 +130,7 @@ const Banner = () => {
 
         // document.getElementById("front").style.transform = `translate(${smallSemiW}px,0%)`
         // document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,${smallSemiH}px) scale(1.5)`
-        document.getElementById("fuso").style.transform = `translate(${halfSemiW}px,${smallSemiH}px)`
+        document.getElementById("fuso").style.transform = `translate(${fusoNewPosX}px,${smallSemiH}px)`
         document.getElementById("outlander").style.transform = `translate(${outNewPosX}px,0)`
 
         // let fusoTranslateVal = (getTranslateValues(document.getElementById("fuso")));
@@ -220,7 +218,7 @@ const Banner = () => {
         // if(outTranslateX === 0) {
             
             // document.getElementById("outlander").style.transform = `translate(${outPosX}px,${smallSemiH}px) scale(1.5)`
-            document.getElementById("outlander").style.transform = `translate(${halfSemiW}px,${smallSemiH}px)`
+            document.getElementById("outlander").style.transform = `translate(${outPosX}px,${smallSemiH}px)`
         // }
         document.getElementById("front").style.transform = `translate(${frontNewPosX}px,0)`
         // let frontNewPos = frontOffset.left - outOffset.left

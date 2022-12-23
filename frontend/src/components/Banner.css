@@ -3,6 +3,7 @@
 #front {
     position: absolute;
     /* left: 250px; */
+    
 }
 
 /* @media(min-width: 992px) { */
@@ -13,7 +14,7 @@
         position: relative;
         background-position: bottom;
         background-size: cover;
-        min-height: 550px;
+        min-height: 500px;
     }
 
     .small-semi-circle {

@@ -1,116 +1,48 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from 'react'
+import carFront from '../assets/images/car_front.png'
+import fusoSmall from '../assets/images/fuso.png'
+import outlanderSmall from '../assets/images/outlander.png'
 import './Banner2.css'
-// https://codepen.io/AlexBalaushko/pen/mdepQzo
+const Banner2 = () => {
+    const [frontSrc, setFrontSrc] = useState(carFront)
+    const [fusoSrc, setFusoSrc] = useState(fusoSmall)
+    const [outSrc, setOutSrc] = useState(outlanderSmall)
 
-export class Banner2 extends Component {
-    state = {
-        carouselDeg: 17,
-        itemDeg: -17,
-        centerItem: 0,
-        prevItem: 9,
-        lastItem: 9,
-        nextItem: 1,
-        carousel: [
-            { name: "Jone", id: 0, position: 1 },
-            { name: "Wong", id: 1, position: 2 },
-            { name: "Kaylem", id: 2, position: 3 }
-        ]
-    };
+    const [rotateDeg, setRotateDeg] = useState(45)
 
-    getIdItems = side => {
-        // true = next, false = prev
-        const { nextItem, prevItem, lastItem } = this.state;
+    const fusoClick = () => {
+        let rotCircle = document.getElementById("rotCircle")
+        rotCircle.style.transform = `rotate(${rotateDeg}deg)`
+        setRotateDeg((rotateDeg) => rotateDeg + 45)
+    }
 
-        if (side) {
-            this.setState(
-                {
-                    centerItem: nextItem
-                },
-                () => prevNext(this.state.centerItem)
-            );
-        } else {
-            this.setState(
-                {
-                    centerItem: prevItem
-                },
-                () => prevNext(this.state.centerItem)
-            );
-        }
+    useEffect(() => {
+        console.log(rotateDeg)
+    }, [rotateDeg])
 
-        const prevNext = itemId => {
-            if (itemId === lastItem) {
-                this.setState({
-                    nextItem: 0,
-                    prevItem: lastItem - 1
-                });
-            } else if (itemId === 0) {
-                this.setState({
-                    prevItem: lastItem,
-                    nextItem: 1
-                });
-            } else {
-                this.setState(state => ({
-                    nextItem: state.centerItem + 1,
-                    prevItem: state.centerItem - 1
-                }));
-            }
-        };
-    };
+    return (
+        <>
+            <div className="semi-circle">
+                <div className="d-flex justify-content-center">
+                    <div className="rotating-circle" onClick={fusoClick} id='rotCircle'>
 
-    next = () => {
-        this.getIdItems(true);
-        this.setState(state => ({
-            carouselDeg: state.carouselDeg - 36,
-            itemDeg: state.itemDeg + 36
-        }));
-    };
+                        <img id='outlander' src={outSrc} />
 
-    prev = () => {
-        this.getIdItems(false);
-        this.setState(state => ({
-            carouselDeg: state.carouselDeg + 36,
-            itemDeg: state.itemDeg - 36
-        }));
-    };
+                        <img id='fuso' src={fusoSrc} />
+                        <img id='front' src={frontSrc} />
+                    </div>
 
-    getCssClass = id => {
-        const { centerItem, nextItem, prevItem } = this.state;
 
-        if (id === centerItem) {
-            return "active";
-        } else if (id === nextItem) {
-            return "next";
-        } else if (id === prevItem) {
-            return "prev";
-        }
-    };
+                    {/* <div id='small-semi' className="small-semi-circle">
 
-    // 36
+                    </div> */}
 
-    render() {
-        return (
-            <div className="Banner2">
-                <button onClick={this.next}>Next</button>
-                <button onClick={this.prev}>Prev</button>
-                <div className="test" />
-                <div
-                    className="carousel"
-                    style={{ transform: `rotate(${this.state.carouselDeg}deg)` }}
-                >
-                    {this.state.carousel.map((item, index) => (
-                        <div
-                            className={`item-carousel ${this.getCssClass(index)}`}
-                            key={item.id}
-                            id={item.id}
-                            style={{ transform: `rotate(${this.state.itemDeg}deg)` }}
-                        >
-                            {item.name}
-                        </div>
-                    ))}
+                </div>
+                <div>
                 </div>
             </div>
-        );
-    }
+        </>
+    )
 }
 
-export default Banner2;
+export default Banner2

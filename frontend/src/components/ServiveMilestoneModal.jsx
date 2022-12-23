@@ -29,7 +29,7 @@ function ServiveMilestoneModal() {
   return (
     <>
       <Button onClick={handleShow} className="inspection-view-btn me-2 py-0 px-4 mt-3">
-        View
+        View / Edit
       </Button>
       <Offcanvas className="py-2" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
@@ -50,7 +50,7 @@ function ServiveMilestoneModal() {
                     return (
                       <button key={index} onClick={() => setOilchange(index)}
                         className={oilchange === index ?
-                          "active-mil-service-option-yes " :
+                          "active-mil-service-option-yes" :
                           "mil-service-option-no"}>
                         {el}
                       </button>
@@ -252,8 +252,8 @@ function ServiveMilestoneModal() {
             </Row>
             <Row>
               <Col className='mil-service-btn-col'>
-                <Button className='mil-service-cancel-btn mx-2' variant="light">Cancel</Button>
-                <Button className='mil-service-update-btn' variant="dark">Update</Button>
+                <Button onClick={() => setShow(false)} className='mil-service-cancel-btn mx-2' variant="light">Cancel</Button>
+                <Button onClick={handleClose} className='mil-service-update-btn' variant="dark">Update</Button>
               </Col>
             </Row>
           </Container>

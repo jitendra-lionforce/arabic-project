@@ -45,6 +45,12 @@ code {
   color: #fff;
 }
 
+.CarsPics .active {
+  background-color: #000;
+  color: #fff !important;
+  transition: 0.5s;
+}
+
 .modal.fade .modal-dialog {
   /* transform: translate3d(0, 100vh, 0); */
 }
@@ -56,10 +62,18 @@ code {
   border-color: #8F8F8F;
 }
 
-.service-dropdown .dropdown-item {
+.service-dropdown .dropdown-item+.btn:active {
   font-size: 14px;
+  background-color: #000;
 
 }
+
+
+/* .service-dropdown >
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  background-color: #000;
+} */
 
 @media (min-width: 992px) {
   /* #outlander {
@@ -87,14 +101,6 @@ code {
   }
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-  font-family: sans-serif;
-  text-align: center;
-}
 
 .slider {
   width: 200px;
@@ -133,6 +139,167 @@ label[for='range'] svg {
   z-index: -1;
   pointer-events: none;
 }
-.modal-header{
-  border-bottom:  none !important;
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+
+
+.vertical-slider {
+  height: 107px;
+  width: 50px;
+  left: -26px;
+  /* border: 1px solid grey; */
+}
+
+.example-thumb {
+  font-size: 0.9em;
+  text-align: center;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  /* border: 5px solid gray; */
+  box-sizing: border-box;
+}
+
+.example-thumb.active {
+  background-color: white;
+  color: black;
+}
+
+.example-track {
+  position: relative;
+  background: black;
+}
+
+.example-track.example-track-1 {
+  background: black;
+}
+
+
+
+.vertical-slider .example-thumb {
+  left: 10px;
+  width: 24px;
+  line-height: 24px;
+  height: 24px;
+  border-radius: 15%;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.vertical-slider .example-track {
+  left: 20px;
+  width: 2px;
+}
+
+.preview-image-btn {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.car-issue-file {
+  background-color: #D9D9D9;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+small {
+  font-weight: 500;
+}
+
+.LoginPage {
+  text-align: -webkit-center;
+}
+
+.form-control:focus {
+  border-color: #f1f7ff !important;
+  box-shadow: 0 0 0 0.10rem rgba(0, 0, 0, 0.589) !important;
+}
+
+.form-select:focus {
+  border-color: #000 !important;
+  box-shadow: 0 0 0 0.10rem rgba(0, 0, 0, 0.29);
+}
+
+.Issuenum {
+  border: 1px solid red;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  line-height: 28px;
+  font-size: 16px;
+}
+
+.service-dropdown .btn:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #000 !important;
+  color: #fff !important;
+
+}
+
+.CarsPics {
+  list-style: none;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.CarsPics a {
+  padding: 7px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 10px;
+  display: inline-block;
+  border: 1px solid black;
+  color: black;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: black;
+}
+.Appointment-card{
+  font-weight: 500;
+}
+.LoginPage .nav-item{
+  width: 45%;
+  background-color: #fff;
+}
+.LoginPage .nav-item button{
+  width: 100%;
+}
+.LoginPage .nav-link{
+ color: #000 !important;
+}
+.LoginPage .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.LoginPage .nav-tabs{
+  border-bottom: 0px !important;
 }

@@ -30,6 +30,7 @@ function InspectionDetailsModel({ name, ...props }) {
   const [floorMaths, setFloorMaths] = useState(0)
   const [windowFL, setWindowFL] = useState(0)
   const [windowFR, setWindowFR] = useState(0)
+  const [windowRL, setWindowRL] = useState(0)
   const [windowRR, setWindowRR] = useState(0)
   const [headlights, setHeadlights] = useState(0)
   const [frontparklights, setFrontparklights] = useState(0)
@@ -38,7 +39,7 @@ function InspectionDetailsModel({ name, ...props }) {
   const [wheelCap, setWheelCap] = useState(0)
   const [antenna, setAntenna] = useState(0)
   const [mirrorLH, setMirrorLH] = useState(0)
-  const [style, setStyle] = useState(false);
+  const [style, setStyle] = useState(true);
 
   const boxs = ['X', 'N', 'D'];
 
@@ -57,10 +58,10 @@ return (
         <Offcanvas.Title>Inspection Details</Offcanvas.Title>
       </Offcanvas.Header>
       <span className='ms-3'>
-        <button onClick={() => [setInternaldiv(true), setExternaldiv(true), setStyle(true)]}
-          className={style ? 'btn outline-none border-bottom mx-2 fw-bold' : 'btn mx-2'}>Internal</button>
+        <button onClick={() => [setInternaldiv(true), setExternaldiv(false), setStyle(true)]}
+          className={style ? 'iDetailbtn btn mx-2 fw-bold' : 'iDetailbtn btn mx-2'} style={{ borderBottom: style? '1px solid blue':''}}>Internal</button>
         <button onClick={() => [setExternaldiv(true), setInternaldiv(false), setStyle(false)]}
-          className={style ? 'btn' : 'btn border-bottom fw-bold'}>Enternal</button>
+          className={style ? 'iDetailbtn btn' : 'iDetailbtn btn fw-bold'} style={{ borderBottom: style? '' : '1px solid blue'}}>Enternal</button>
       </span>
       <Offcanvas.Body>
         <Container>
@@ -76,7 +77,7 @@ return (
                       return (
                         <button key={index} onClick={() => setServiceBook(index)}
                           className={serviceBook === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -95,7 +96,7 @@ return (
                       return (
                         <button key={index} onClick={() => setRadio(index)}
                           className={radio === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -114,7 +115,7 @@ return (
                       return (
                         <button key={index} onClick={() => setAc(index)}
                           className={ac === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -133,7 +134,7 @@ return (
                       return (
                         <button key={index} onClick={() => setSpareWheel(index)}
                           className={spareWheel === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -152,7 +153,7 @@ return (
                       return (
                         <button key={index} onClick={() => setCassette(index)}
                           className={cassette === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -171,7 +172,7 @@ return (
                       return (
                         <button key={index} onClick={() => setCigLighter(index)}
                           className={cigLighter === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -191,7 +192,7 @@ return (
                       return (
                         <button key={index} onClick={() => setHeadRest(index)}
                           className={headRest === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -210,7 +211,7 @@ return (
                       return (
                         <button key={index} onClick={() => setJack(index)}
                           className={jack === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -229,7 +230,7 @@ return (
                       return (
                         <button key={index} onClick={() => setTurnSignals(index)}
                           className={turnSignals === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -248,7 +249,7 @@ return (
                       return (
                         <button key={index} onClick={() => setInsideMirror(index)}
                           className={insideMirror === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -267,7 +268,7 @@ return (
                       return (
                         <button key={index} onClick={() => setTools(index)}
                           className={tools === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -286,7 +287,7 @@ return (
                       return (
                         <button key={index} onClick={() => setFireExtinguisher(index)}
                           className={fireExtinguisher === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -305,7 +306,7 @@ return (
                       return (
                         <button key={index} onClick={() => setBluetooth(index)}
                           className={bluetooth === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -324,7 +325,7 @@ return (
                       return (
                         <button key={index} onClick={() => setFloorMaths(index)}
                           className={floorMaths === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -350,7 +351,7 @@ return (
                       return (
                         <button key={index} onClick={() => setWindowFL(index)}
                           className={windowFL === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -369,7 +370,7 @@ return (
                       return (
                         <button key={index} onClick={() => setWindowFR(index)}
                           className={windowFR === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -386,9 +387,9 @@ return (
                   {
                     boxs.map((el, index) => {
                       return (
-                        <button key={index} onClick={() => setWindowRR(index)}
-                          className={windowRR === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                        <button key={index} onClick={() => setWindowRL(index)}
+                          className={windowRL === index ?
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -407,7 +408,7 @@ return (
                       return (
                         <button key={index} onClick={() => setWindowRR(index)}
                           className={windowRR === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -426,7 +427,7 @@ return (
                       return (
                         <button key={index} onClick={() => setHeadlights(index)}
                           className={headlights === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -445,7 +446,7 @@ return (
                       return (
                         <button key={index} onClick={() => setFrontparklights(index)}
                           className={frontparklights === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -464,7 +465,7 @@ return (
                       return (
                         <button key={index} onClick={() => setRearparkLights(index)}
                           className={rearparkLights === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -483,7 +484,7 @@ return (
                       return (
                         <button key={index} onClick={() => setMirrorRH(index)}
                           className={mirrorRH === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -502,7 +503,7 @@ return (
                       return (
                         <button key={index} onClick={() => setWheelCap(index)}
                           className={wheelCap === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -521,7 +522,7 @@ return (
                       return (
                         <button key={index} onClick={() => setAntenna(index)}
                           className={antenna === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -540,7 +541,7 @@ return (
                       return (
                         <button key={index} onClick={() => setMirrorLH(index)}
                           className={mirrorLH === index ?
-                            "mx-1 active-mil-service-option-yes " :
+                            "mx-1 active-inspection-details-option-yes " :
                             "mx-1 mil-service-option-no"}>
                           {el}
                         </button>
@@ -556,8 +557,8 @@ return (
 
           <Row>
             <Col className='mil-service-btn-col'>
-              <Button className='mil-service-cancel-btn mx-2' variant="light">Cancel</Button>
-              <Button className='mil-service-update-btn' variant="dark">Update</Button>
+              <Button onClick={()=> setShow(false)} className='mil-service-cancel-btn mx-2' variant="light">Cancel</Button>
+              <Button onClick={handleClose} className='mil-service-update-btn' variant="dark">Update</Button>
             </Col>
           </Row>
         </Container>

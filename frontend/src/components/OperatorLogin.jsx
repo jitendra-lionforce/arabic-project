@@ -46,7 +46,7 @@ const OperatorLogin = ({ auth, setAuth }) => {
     console.log(e.target.value);
     let result = arabic.test(e.target.value);
     console.log(result);
-    if(result) {
+    if (result) {
       setDirState('rtl')
     } else {
       console.log("asjasj");
@@ -55,23 +55,20 @@ const OperatorLogin = ({ auth, setAuth }) => {
   }
   return (
     <>
-    <Banner/>
+      <Banner />
       <div className="container text-center">
         {/* <div>
           <img src={carFront} alt="" />
         </div> */}
         <form className='mt-5'>
-
-          <div>
-
-            <input className='p-4' type='text' placeholder='Operator Code' username={username} onChange={opHandleKeyPress} dir={dirState} />
+          <div className='LoginPage'>
+            <input className='p-3 form-control w-50' type='text' placeholder='Operator Code' username={username} onChange={opHandleKeyPress} dir={dirState} />
           </div>
-          <div className='mt-3'>
-
-            <input className='p-4' type='password' placeholder='Password' password={password} onChange={(e) => setPassword(e.target.value)} />
+          <div className='mt-3 LoginPage'>
+            <input className='p-3 form-control w-50' type='password' placeholder='Password' password={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <div className='mt-3'>
-            <button className='primary-btn' onClick={submitForm}>Submit</button>
+          <div className='mt-3 LoginPage'>
+            <button className='primary-btn form-control w-50' onClick={submitForm}>Submit</button>
           </div>
         </form>
       </div>

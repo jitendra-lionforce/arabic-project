@@ -5,18 +5,7 @@ small {
     letter-spacing: 1px;
 }
 
-/* .offcanvas.offcanvas-start {
-    top: 0;
-    width: var(--bs-offcanvas-width);
-    border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
-    transform: translateX(100%);
-    right: 0px !important;
-}
-.offcanvas.show:not(.hiding), .offcanvas.showing {
-    transform: none !important;
-} */
 .offcanvas.offcanvas-start {
-    top: auto !important;
     border-radius: 48px 0px 0px 0px;
     right: 0 !important;
     bottom: 0 !important;
@@ -32,18 +21,28 @@ small {
 .offcanvas.offcanvas-start {
     left: auto;
     bottom: 0 !important;
-    top: inherit !important;
+    /* top: inherit !important; */
     bottom: 0 !important;
-    height: 600px !important;
+}
+
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
+    min-height: 600px !important;
 }
 
 .confirmation {
     cursor: pointer;
 }
-.car-img{
+
+.car-img {
     object-fit: contain;
     width: 100%;
 }
+
 .service-mil-modal-title {
     font-weight: 700;
     font-size: 20px;
@@ -62,7 +61,8 @@ small {
     background-color: #8F8F8F;
     border-radius: 50%;
     opacity: 100%;
-    border: 7px solid #2C2C2C;
+    border: 7px solid #686868eb;
+    outline: none;
 }
 
 .mil-service-option {
@@ -103,54 +103,98 @@ small {
     margin-top: 8px;
 }
 
-.mil-service-btn-col{
+.mil-service-btn-col {
     margin-top: 30px;
     text-align: end;
 }
 
-.mil-service-update-btn{
+.mil-service-update-btn {
     background-color: #000000;
     font-size: 15px;
     padding: 9px 15px;
     color: #fff;
     border-radius: 4px;
-    text-align: center;   
+    text-align: center;
 }
-.mil-service-update-btn:hover{
+
+.mil-service-update-btn:hover {
     background-color: #000000;
     border-color: #000000;
 }
-.mil-service-cancel-btn{
+
+.mil-service-cancel-btn {
     background-color: transparent;
     color: #000000 !important;
     font-size: 15px;
     padding: 9px 15px;
     color: #fff;
     border-radius: 4px;
-    text-align: center;   
+    text-align: center;
 }
-.mil-service-cancel-btn:hover{
+
+.mil-service-cancel-btn:hover {
     background-color: #fff;
     border-color: #fff;
 }
-
-.offcanvas{
-    bottom: 0 !important ;
+.active-inspection-details-option-yes{
+    background-color: #F9851A;
+    font-size: 15px;
+    border: none;
+    padding: 9px 7px;
+    color: #fff;
+    border-radius: 4px;
+    width: 18%;
+    text-align: center;
 }
-.view-buttons button:nth-child(5){
+
+.offcanvas {
+    bottom: 0 !important;
+}
+
+.view-buttons button:nth-child(5) {
     margin: auto;
     position: absolute;
     top: 79%;
     right: 80px;
 }
-.view-buttons button:nth-child(6){
+
+.view-buttons button:nth-child(6) {
     margin: auto;
     position: absolute;
     top: 79%;
     left: 80px;
 }
 
-.btn:active:focus-visible{
+.btn:active:focus-visible {
     box-shadow: transparent !important;
     border-color: transparent !important;
+}
+
+.btn-close:focus {
+    box-shadow: none !important;
+}
+
+.iDetailbtn {
+    border-radius: 0 !important;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    border-color: transparent;
+}
+
+.Milagemodal {
+    top: auto !important;
+}
+.mil-in-sys-input-div{
+    position: relative;
+}
+.mil-in-sys-input-icon{
+    position: absolute;
+    top: 62%;
+    right: 4%;
+    cursor: pointer;
 }

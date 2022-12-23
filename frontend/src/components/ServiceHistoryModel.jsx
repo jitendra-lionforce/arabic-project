@@ -30,10 +30,10 @@ function ServiceHistoryModel() {
   return (
     <>
       <Button variant="outline-dark py-0 px-4 mt-2" onClick={handleShow}>
-        View
+      View / Edit
       </Button>
 
-      <Modal show={show} onHide={handleClose} size="lg">
+      <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>Service History</Modal.Title>
         </Modal.Header>
@@ -46,56 +46,56 @@ function ServiceHistoryModel() {
           <center className="d-flex justify-content-between p-2 pdf-downloader-div">
             <div>GAC_Service_18th June 2022.pdf</div>
             <div className='d-flex align-items-center'>
-              <BsEye className='h3'/>
+              <BsEye className='h3 pdf'/>
               <div className='mx-3' onClick={onButtonClick}>
-                <AiOutlineDownload className='h3'/>
+                <AiOutlineDownload className='h3 pdf'/>
               </div>
             </div>
           </center>
           <center className="mt-3 d-flex justify-content-between p-2 pdf-downloader-div">
             <div>GAC_Service_18th June 2022.pdf</div>
             <div className='d-flex align-items-center'>
-              <BsEye className='h3'/>
+              <BsEye className='h3 pdf'/>
               <div className='mx-3' onClick={onButtonClick}>
-                <AiOutlineDownload className='h3'/>
+                <AiOutlineDownload className='h3 pdf'/>
               </div>
             </div>
           </center>
           <center className="mt-3 d-flex justify-content-between p-2 pdf-downloader-div">
             <div>GAC_Service_18th June 2022.pdf</div>
             <div className='d-flex align-items-center'>
-              <BsEye className='h3'/>
+              <BsEye className='h3 pdf'/>
               <div className='mx-3' onClick={onButtonClick}>
-                <AiOutlineDownload className='h3'/>
+                <AiOutlineDownload className='h3 pdf'/>
               </div>
             </div>
           </center>
           <center className="mt-3 d-flex justify-content-between p-2 pdf-downloader-div">
             <div>GAC_Service_18th June 2022.pdf</div>
             <div className='d-flex align-items-center'>
-              <BsEye className='h3'/>
+              <BsEye className='h3 pdf'/>
               <div className='mx-3' onClick={onButtonClick}>
-                <AiOutlineDownload className='h3'/>
+                <AiOutlineDownload className='h3 pdf'/>
               </div>
             </div>
           </center>
           <center className="mt-3 d-flex justify-content-between p-2 pdf-downloader-div">
             <div>GAC_Service_18th June 2022.pdf</div>
             <div className='d-flex align-items-center'>
-              <BsEye className='h3'/>
+              <BsEye className='h3 pdf'/>
               <div className='mx-3' onClick={onButtonClick}>
-                <AiOutlineDownload className='h3'/>
+                <AiOutlineDownload className='h3 pdf'/>
               </div>
             </div>
           </center>
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button variant="btn btn-outline-dark" onClick={handleClose}>
+            Cancel
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="dark" onClick={handleClose}>
+            Save 
           </Button>
         </Modal.Footer>
       </Modal>

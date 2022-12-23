@@ -84,24 +84,24 @@ const CarSelection = () => {
                   <div className="user-list">
                     <Row>
                       {foundUsers && foundUsers.length > 0 ? (
-                        foundUsers.map((user) => (
+                        foundUsers.map((user, index) => (
                           // <li key={user.id} className="user">
                           //   {/* <span className="user-id">{user.id}</span> */}
                           //   <span className="user-name">{user.platename}</span>
                           // </li>
-                          <Col lg={4} xl={4} md={6} className={user.status === 'active' ? "car-cards-col-green" : (user.status !== 'none' ? 'car-cards-col-red' : 'car-cards-col')}>
+                          <Col key={index} lg={4} xl={4} md={6} className={user.status === 'active' ? "car-cards-col-green" : (user.status !== 'none' ? 'car-cards-col-red' : 'car-cards-col')}>
                             <Row>
                               <Col className="card-col">
-                                <Link to='/inspection'>
+                                <Link to='/inspection' style={{textDecoration: 'none', color:'black'}}>
                                 
                                 <Card >
-                                  <Card.Body>
+                                  <Card.Body className="">
                                     <span className="days-more-span">{user.status}</span>
                                     <span className="appointment-span">
                                       Book Appointment
                                     </span>
                                     <Card.Img src={CarFront} /> <br />
-                                    <span>{user.platename}</span>
+                                    <span className={user.status === 'active' ? 'text-secondary Appointment-card': 'Appointment-card'}>{user.platename}</span>
                                   </Card.Body>
                                 </Card>
                                 </Link>
